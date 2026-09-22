@@ -1,0 +1,21 @@
+---
+title: "September 2021 Concerts"
+date: "2021-10-22T08:25:08"
+wpId: 290
+excerpt: "26 September 2021 – Slide by Slide Leader, Kevin Grenfell, played trombone and trumpet along with the occasional vocals, Richard Leach was on trombone, Simon Smith played bass, Richard Hughes on piano and last but not least David Wilkes on percussion. The temperature in the room went up several degrees when faced with cheeky Kevin…"
+---
+
+<div class="wp-content">
+<p><strong>26 September 2021 – Slide by Slide</strong></p>
+<figure class="wp-block-image size-large is-resized"><img src="/wp-content/uploads/2021/10/image-1024x764.webp" alt="" class="wp-image-291" width="629" height="469"/></figure>
+<p>Leader, Kevin Grenfell, played trombone and trumpet along with the occasional vocals, Richard Leach was on trombone, Simon Smith played bass, Richard Hughes on piano and last but not least David Wilkes on percussion.&nbsp; The temperature in the room went up several degrees when faced with cheeky Kevin and his endless jokes. &nbsp; Some of the music included ‘Give Me a Kiss to Build a Dream On’, ‘Mood Indigo’, ‘Tea for Two’ and for the brolly parade we had ‘Bourbon Street Parade’. &nbsp; In addition there was ‘Strike Up The Band’ (my personal favourite with a fantastic intro by David) which left nobody sitting without tapping hands or feet, ‘The Gypsy’ and ‘It Had To Be You’, finishing with ‘Bye Bye Blackbird’. &nbsp; It was so lovely to see this band once more and we hope it won’t be too long before we see them once more.</p>
+<p><strong>19 September 2021 – Tame Valley Stompers</strong></p>
+<figure class="wp-block-image size-full is-resized"><img src="/wp-content/uploads/2021/10/image-1.webp" alt="" class="wp-image-292" width="630" height="470"/></figure>
+<p>It was delightful to see this vibrant band in action. &nbsp; With Norman Pennington on the drums (leader), Terry Brunt once more on trombone, Roger Wimpenny on trumpet, Paul Broomhead on reeds, John Gordon on banjo and guitar and Pete Smith on bass guitar the opening number was ‘Just a Little While to Stay Here’. &nbsp; This was followed, in no particular order, by well known numbers such as ‘Stevedore Stomp’, ‘Blue Bossa’ and ‘Dark Town Strutters Ball’ (and for years I had thought it was Downton Strutters Ball!!) and Savoy Blues.&nbsp; Terry gave a good rendition of ‘St James Infirmary Blues’ and the band also played ‘Hiawatha Rag’ and ‘Sweet Georgia Brown’ amongst others. &nbsp; The music was great, the band in good form and the audience highly delighted.</p>
+<p><strong>12 September 2021 – Eric Newton’s Jazz Band</strong></p>
+<figure class="wp-block-image size-large is-resized"><img src="/wp-content/uploads/2021/10/image-2-1024x765.webp" alt="" class="wp-image-293" width="630" height="470"/></figure>
+<p>How lovely to see Eric back to his old self again following his recent ill health.&nbsp; This band was a delight to listen to with Eric Newton (clarinet), Terry Brunt (trombone), Pete Brown (trumpet), Mark Challinor (banjo), Jack Cotterill (drums) and Richard Vernon (bass).&nbsp; They received a very warm welcome from SJS and the band opened with ‘Way Down Upon the Swanee River’.&nbsp; Amongst others the programme included ‘Careless Love Blues’, ‘The Gospel Train’, ‘Lily of the Valley’ and the ‘Stevedore Stomp’.&nbsp; They ended with ‘Going Home’, highly appropriate.</p>
+<p><strong>5 September 2021 – Mike Owen’s Celebration Jazz Band</strong></p>
+<figure class="wp-block-image size-large is-resized"><img src="/wp-content/uploads/2021/10/image-3-1024x765.webp" alt="" class="wp-image-294" width="629" height="469"/></figure>
+<p>With a name like this how could it not be first consideration for the band to kick start the season now that we can meet up again.&nbsp; It was lovely to see so many people attending and the hope is that we go from strength to strength. &nbsp; The band consisted of Mike Owen (leader and trombone), Tony Pipkin (trumpet), Jim Swinnerton (bass), John Irwin (banjo/guitar), Jack Cotterill (drums) and Jeff Matthews (reeds). &nbsp; The music was varied and included ‘Should I Reveal Exactly How I Feel’, ‘Lily of the Valley’, ‘Linger a While’ and ‘Moose March’. &nbsp; All that lovely music and Julie and Martin in Sunset Café.&nbsp; Welcome back one and all.</p>
+</div>

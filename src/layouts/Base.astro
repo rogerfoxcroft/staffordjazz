@@ -1,0 +1,126 @@
+---
+import site from '../data/site.json';
+import Sidebar from '../components/Sidebar.astro';
+import legacyUrls from '../data/legacy-urls.json';
+
+interface Props {
+  title?: string;
+  bodyClass: string;
+  description?: string;
+}
+
+const { title, bodyClass, description } = Astro.props;
+const isFront = Astro.url.pathname === '/';
+const fullTitle = isFront
+  ? `${site.title} – ${site.description}`
+  : `${title ? title + ' ' : ''}– ${site.title}`;
+const current = (href: string) => Astro.url.pathname === href;
+---
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script is:inline>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+	{isFront && (
+		<script is:inline define:vars={{ legacyUrls }}>
+			// Old WordPress plain permalinks (/?p=123, /?page_id=123, /?m=202411, /?s=term) all land on the front page.
+			var q = new URLSearchParams(location.search);
+			var id = q.get('p') || q.get('page_id');
+			var m = q.get('m');
+			if (id && legacyUrls[id]) location.replace(legacyUrls[id]);
+			else if (m && /^\d{6}/.test(m)) location.replace('/' + m.slice(0, 4) + '/' + m.slice(4, 6) + '/');
+			else if (q.get('s')) location.replace('/search/?s=' + encodeURIComponent(q.get('s')));
+		</script>
+	)}
+	<title>{fullTitle}</title>
+	{description && <meta name="description" content={description} />}
+	<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+	<link rel="icon" href="/theme/icon-32.png" sizes="32x32" />
+	<link rel="icon" href="/theme/icon-192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/theme/icon-180.png" />
+	<link rel="stylesheet" href="/theme/wp/block-library.min.css" />
+	<link rel="stylesheet" href="/theme/wp/classic-themes.min.css" />
+	<link rel="stylesheet" href="/theme/twentysixteen/fonts/merriweather-plus-montserrat-plus-inconsolata.css" />
+	<link rel="stylesheet" href="/theme/twentysixteen/genericons/genericons.css" />
+	<link rel="stylesheet" href="/theme/twentysixteen/style.css" />
+	<link rel="stylesheet" href="/theme/twentysixteen/css/blocks.css" />
+	<link rel="stylesheet" href="/theme/site.css" />
+</head>
+
+<body class={`${bodyClass} wp-custom-logo`}>
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header">
+			<div class="site-header-main">
+				<div class="site-branding">
+					<a href="/" class="custom-logo-link" rel="home" aria-current={isFront ? 'page' : undefined}><img width={site.logo.width} height={site.logo.height} src={site.logo.src} class="custom-logo" alt={site.title} decoding="async" /></a>
+					<p class="site-title"><a href="/" rel="home" aria-current={isFront ? 'page' : undefined}>{site.title}</a></p>
+					<p class="site-description">{site.description}</p>
+				</div><!-- .site-branding -->
+
+				<button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+
+				<div id="site-header-menu" class="site-header-menu">
+					<nav id="site-navigation" class="main-navigation" aria-label="Primary Menu">
+						<div class="menu-main-menu-container"><ul id="menu-main-menu" class="primary-menu">
+							{site.menu.map((item) => (
+								<li class:list={['menu-item', { 'current-menu-item': current(item.href) }]}><a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a></li>
+							))}
+						</ul></div>
+					</nav><!-- .main-navigation -->
+				</div><!-- .site-header-menu -->
+			</div><!-- .site-header-main -->
+		</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+					<slot />
+				</main><!-- .site-main -->
+
+				<aside id="content-bottom-widgets" class="content-bottom-widgets">
+					<!-- The old site had an empty group block here; the theme renders it as a rule under the content. -->
+					<div class="widget-area">
+						<section id="block-5" class="widget widget_block">
+							<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow"></div></div>
+						</section>
+					</div>
+				</aside><!-- .content-bottom-widgets -->
+			</div><!-- .content-area -->
+
+			<Sidebar />
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer">
+			<nav class="main-navigation" aria-label="Footer Primary Menu">
+				<div class="menu-main-menu-container"><ul class="primary-menu">
+					{site.menu.map((item) => (
+						<li class:list={['menu-item', { 'current-menu-item': current(item.href) }]}><a href={item.href}>{item.label}</a></li>
+					))}
+				</ul></div>
+			</nav><!-- .main-navigation -->
+
+			<div class="site-info">
+				<span class="site-title"><a href="/" rel="home">{site.title}</a></span>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script is:inline>
+(function () {
+	var button = document.getElementById('menu-toggle');
+	var menu = document.getElementById('site-header-menu');
+	if (!button || !menu) return;
+	button.addEventListener('click', function () {
+		var open = button.classList.toggle('toggled-on');
+		menu.classList.toggle('toggled-on', open);
+		button.setAttribute('aria-expanded', String(open));
+	});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  base: string; // e.g. "/2024/"
+  page: number;
+  total: number;
+}
+const { base, page, total } = Astro.props;
+const href = (n: number) => (n === 1 ? base : `${base}page/${n}/`);
+const numbers = Array.from({ length: total }, (_, i) => i + 1);
+---
+{total > 1 && (
+	<nav class="navigation pagination" aria-label="Posts pagination">
+		<h2 class="screen-reader-text">Posts pagination</h2>
+		<div class="nav-links">
+			{page > 1 && <a class="prev page-numbers" href={href(page - 1)}>Previous page</a>}
+			{numbers.map((n) => n === page
+				? <span aria-current="page" class="page-numbers current"><span class="meta-nav screen-reader-text">Page </span>{n}</span>
+				: <a class="page-numbers" href={href(n)}><span class="meta-nav screen-reader-text">Page </span>{n}</a>)}
+			{page < total && <a class="next page-numbers" href={href(page + 1)}>Next page</a>}
+		</div>
+	</nav>
+)}

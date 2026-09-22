@@ -1,0 +1,32 @@
+{
+  "title": "Stafford Jazz Society",
+  "description": "Founded in 1981",
+  "author": "roger",
+  "logo": {
+    "src": "/wp-content/uploads/2019/02/image.png",
+    "width": 128,
+    "height": 128
+  },
+  "menu": [
+    {
+      "label": "General Info",
+      "href": "/"
+    },
+    {
+      "label": "Gig List",
+      "href": "/gigs/"
+    },
+    {
+      "label": "Info for Bands",
+      "href": "/info-for-bands/"
+    },
+    {
+      "label": "Membership",
+      "href": "/membership/"
+    },
+    {
+      "label": "History",
+      "href": "/history/"
+    }
+  ]
+}

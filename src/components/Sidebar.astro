@@ -1,0 +1,37 @@
+---
+import { getPosts, getMonths, postUrl, formatMonth } from '../lib/posts';
+
+const posts = await getPosts();
+const recent = posts.slice(0, 5);
+const months = getMonths(posts);
+---
+<aside id="secondary" class="sidebar widget-area">
+	<section id="block-2" class="widget widget_block widget_search">
+		<form role="search" method="get" action="/search/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search">
+			<label class="wp-block-search__label" for="wp-block-search__input-1">Search</label>
+			<div class="wp-block-search__inside-wrapper">
+				<input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="" value="" type="search" name="s" required />
+				<button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit">Search</button>
+			</div>
+		</form>
+	</section>
+	<section id="block-3" class="widget widget_block">
+		<div class="wp-block-group"><div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
+			<h2 class="wp-block-heading">Recent Posts</h2>
+			<ul class="wp-block-latest-posts__list wp-block-latest-posts">
+				{recent.map((post) => (
+					<li><a class="wp-block-latest-posts__post-title" href={postUrl(post)}>{post.data.title || '(no title)'}</a></li>
+				))}
+			</ul>
+		</div></div>
+	</section>
+	<section id="block-12" class="widget widget_block widget_archive">
+		<div class="wp-block-archives-dropdown wp-block-archives">
+			<label for="wp-block-archives-1" class="wp-block-archives__label screen-reader-text">Archives</label>
+			<select id="wp-block-archives-1" name="archive-dropdown" onchange="if (this.value) document.location.href = this.value;">
+				<option value="">Select Month</option>
+				{months.map((key) => <option value={`/${key}/`}>{formatMonth(key)}</option>)}
+			</select>
+		</div>
+	</section>
+</aside><!-- .sidebar .widget-area -->

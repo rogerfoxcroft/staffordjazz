@@ -1,0 +1,121 @@
+---
+// Every WordPress-shaped URL comes from this one route:
+//   /                       front page          /slug/                  page
+//   /YYYY/MM/slug/          post                /YYYY/  /YYYY/MM/       date archives
+//   /author/<name>/         all posts           .../page/N/             archive pagination
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Entry from '../components/Entry.astro';
+import Pagination from '../components/Pagination.astro';
+import site from '../data/site.json';
+import { type Post, POSTS_PER_PAGE, getPosts, getMonths, monthKey, postUrl, formatDate, formatMonth, excerptOf } from '../lib/posts';
+
+type Props =
+  | { kind: 'page'; page: CollectionEntry<'pages'>; latest: Post[] }
+  | { kind: 'post'; post: Post; prev?: Post; next?: Post }
+  | { kind: 'archive'; heading: string; bodyClass: string; base: string; posts: Post[]; pageNumber: number; totalPages: number };
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const pages = await getCollection('pages');
+  const paths: { params: { path: string | undefined }; props: Props }[] = [];
+
+  for (const page of pages) {
+    paths.push({
+      params: { path: page.id === 'index' ? undefined : page.id },
+      props: { kind: 'page', page, latest: posts.slice(0, page.data.latestPosts ?? 0) },
+    });
+  }
+
+  posts.forEach((post, i) => {
+    paths.push({
+      params: { path: postUrl(post).slice(1, -1) },
+      props: { kind: 'post', post, prev: posts[i + 1], next: posts[i - 1] },
+    });
+  });
+
+  const archive = (base: string, heading: string, bodyClass: string, list: Post[]) => {
+    const totalPages = Math.ceil(list.length / POSTS_PER_PAGE);
+    for (let n = 1; n <= totalPages; n++) {
+      paths.push({
+        params: { path: (n === 1 ? base : `${base}page/${n}/`).slice(1, -1) },
+        props: {
+          kind: 'archive', heading, bodyClass, base, pageNumber: n, totalPages,
+          posts: list.slice((n - 1) * POSTS_PER_PAGE, n * POSTS_PER_PAGE),
+        },
+      });
+    }
+  };
+
+  for (const key of getMonths(posts)) {
+    archive(`/${key}/`, `Month: <span>${formatMonth(key)}</span>`, 'archive date', posts.filter((p) => monthKey(p) === key));
+  }
+  for (const year of new Set(posts.map((p) => monthKey(p).slice(0, 4)))) {
+    archive(`/${year}/`, `Year: <span>${year}</span>`, 'archive date', posts.filter((p) => monthKey(p).startsWith(year)));
+  }
+  archive(`/author/${site.author}/`, `Author: <span>${site.author}</span>`, 'archive author', posts);
+
+  return paths;
+}
+
+const props = Astro.props as Props;
+const PageContent = props.kind === 'page' ? (await render(props.page)).Content : null;
+---
+{props.kind === 'page' && (
+	<Base title={props.page.data.title} bodyClass={`${props.page.id === 'index' ? 'home ' : ''}page-template-default page`}>
+		<article id={`post-${props.page.data.wpId}`} class="page type-page status-publish hentry" data-pagefind-body>
+			<header class="entry-header">
+				<h1 class="entry-title" data-pagefind-meta="title">{props.page.data.title}</h1>
+			</header><!-- .entry-header -->
+
+			<div class="entry-content">
+				{PageContent && <PageContent />}
+				{props.latest.length > 0 && (
+					<div class="wp-block-query" data-pagefind-ignore>
+						<ul class="wp-block-post-template">
+							{props.latest.map((post) => (
+								<li class="wp-block-post post type-post status-publish format-standard hentry">
+									<h2 class="wp-block-post-title"><a href={postUrl(post)}>{post.data.title}</a></h2>
+									{post.data.featuredImage && (
+										<figure class="alignwide wp-block-post-featured-image">
+											<a href={postUrl(post)}><img src={post.data.featuredImage.src} width={post.data.featuredImage.width} height={post.data.featuredImage.height} alt={post.data.title} class="attachment-post-thumbnail size-post-thumbnail wp-post-image" style="object-fit:cover;" decoding="async" loading="lazy" /></a>
+										</figure>
+									)}
+									<div class="wp-block-post-excerpt"><p class="wp-block-post-excerpt__excerpt">{excerptOf(post)}</p></div>
+									<hr class="wp-block-separator has-css-opacity" />
+									<div class="wp-block-post-date"><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time></div>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
+			</div><!-- .entry-content -->
+		</article>
+	</Base>
+)}
+
+{props.kind === 'post' && (
+	<Base title={props.post.data.title} bodyClass="post-template-default single single-post single-format-standard" description={excerptOf(props.post)}>
+		<Entry post={props.post} single />
+
+		<nav class="navigation post-navigation" aria-label="Posts">
+			<h2 class="screen-reader-text">Post navigation</h2>
+			<div class="nav-links">
+				{props.prev && <div class="nav-previous"><a href={postUrl(props.prev)} rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">{props.prev.data.title}</span></a></div>}
+				{props.next && <div class="nav-next"><a href={postUrl(props.next)} rel="next"><span class="meta-nav" aria-hidden="true">Next</span> <span class="screen-reader-text">Next post:</span> <span class="post-title">{props.next.data.title}</span></a></div>}
+			</div>
+		</nav>
+	</Base>
+)}
+
+{props.kind === 'archive' && (
+	<Base title={props.heading.replace(/^[^<]*<span>|<\/span>$/g, '') + (props.pageNumber > 1 ? ` – Page ${props.pageNumber}` : '')} bodyClass={`${props.bodyClass} hfeed`}>
+		<header class="page-header">
+			<h1 class="page-title" set:html={props.heading} />
+		</header><!-- .page-header -->
+
+		{props.posts.map((post) => <Entry post={post} />)}
+
+		<Pagination base={props.base} page={props.pageNumber} total={props.totalPages} />
+	</Base>
+)}

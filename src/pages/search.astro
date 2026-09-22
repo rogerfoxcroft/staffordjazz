@@ -1,0 +1,72 @@
+---
+// Static stand-in for WordPress search (/?s=term), backed by the Pagefind index built after `astro build`.
+// Mirrors search.php + content-search.php: newest first, title, excerpt with "Continue reading", posted-on.
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="Search Results" bodyClass="search search-results hfeed">
+	<header class="page-header">
+		<h1 class="page-title">Search Results for: <span id="search-term"></span></h1>
+	</header><!-- .page-header -->
+
+	<div id="search-results"></div>
+
+	<section id="search-none" class="no-results not-found" hidden>
+		<header class="page-header">
+			<h1 class="page-title">Nothing Found</h1>
+		</header><!-- .page-header -->
+		<div class="page-content">
+			<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+		</div><!-- .page-content -->
+	</section>
+</Base>
+
+<script is:inline define:vars={{ siteTitle: site.title }} type="module">
+	const term = new URLSearchParams(location.search).get('s') ?? '';
+	document.getElementById('search-term').textContent = term;
+	document.title = `Search Results for “${term}” – ${siteTitle}`;
+	const input = document.querySelector('.wp-block-search__input');
+	if (input) input.value = term;
+
+	const results = document.getElementById('search-results');
+	const none = document.getElementById('search-none');
+	const el = (tag, className, text) => {
+		const e = document.createElement(tag);
+		if (className) e.className = className;
+		if (text !== undefined) e.textContent = text;
+		return e;
+	};
+
+	if (term.trim()) {
+		try {
+			const pagefind = await import('/pagefind/pagefind.js');
+			const search = await pagefind.search(term, { sort: { date: 'desc' } });
+			const items = await Promise.all(search.results.slice(0, 50).map((r) => r.data()));
+			for (const item of items) {
+				const article = el('article', 'post type-post status-publish format-standard hentry');
+				const header = el('header', 'entry-header');
+				const h2 = el('h2', 'entry-title');
+				const link = el('a', '', item.meta.title || '(no title)');
+				link.href = item.url; link.rel = 'bookmark';
+				h2.append(link); header.append(h2);
+
+				const summary = el('div', 'entry-summary');
+				const p = el('p', '', (item.meta.excerpt || item.excerpt.replace(/<[^>]+>/g, '')).replace(/…$/, '') + ' … ');
+				const more = el('a', 'more-link', 'Continue reading');
+				more.href = item.url;
+				p.append(more); summary.append(p);
+				article.append(header, summary);
+
+				results.append(article);
+			}
+			none.hidden = items.length > 0;
+			if (!items.length) document.querySelector('.page-header').hidden = true;
+		} catch (e) {
+			// The index only exists in a production build (npm run build), not under `astro dev`.
+			none.hidden = false;
+			console.error('Search index unavailable', e);
+		}
+	} else {
+		none.hidden = false;
+	}
+</script>

@@ -1,0 +1,29 @@
+{
+  "name": "staffordjazz",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "export": "scripts/db.sh && node scripts/export.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "@wordpress/autop": "^4.55.0",
+    "entities": "^8.1.0",
+    "mysql2": "^3.24.4",
+    "pagefind": "^1.5.2",
+    "php-serialize": "^5.1.3",
+    "sharp": "^0.35.4"
+  }
+}

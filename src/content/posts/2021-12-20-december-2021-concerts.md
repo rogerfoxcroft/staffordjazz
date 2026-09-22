@@ -1,0 +1,15 @@
+---
+title: "December 2021 Concerts"
+date: "2021-12-20T08:59:15"
+wpId: 319
+excerpt: "Chicago Teddybears Society Jazzband : This four times winner of the SJS Band of the Year Award was welcomed back to the White Eagle Club with enthusiasm, even on such a murky day. In the line-up were leader Rae Owen (banjo, guitar and vocals), Deano Revera (bass), Brian Singleton (drums), John Padfield (reeds), Jim Lucas…"
+---
+
+<div class="wp-content">
+<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2021/12/image-2.jpeg" alt="" class="wp-image-322"/></figure>
+<p><strong><u>Chicago Teddybears Society Jazzband</u></strong>:  This four times winner of the SJS Band of the Year Award was welcomed back to the White Eagle Club with enthusiasm, even on such a murky day.  In the line-up were leader Rae Owen (banjo, guitar and vocals), Deano Revera (bass), Brian Singleton (drums), John Padfield (reeds), Jim Lucas (trumpet) and Andy Mackenzie (trombone and vocals).  The concert was a mix of new Orleans and Dixieland jazz flavoured with a few Christmas carols.  Some of the numbers were: ‘Apex Blues’, ‘Hello Central This is Dr Jazz’, ‘China Boy’, ‘Ain’t Misbehaving’, ‘Everybody Loves My Baby’, ‘Canal Street Blues’ and ‘Swing Low Sweet Chariot’.  Of course it would not be Christmas without ‘I’m Dreaming of a White Christmas’.  We look forward to a return visit.</p>
+<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2021/12/image-1.jpeg" alt="" class="wp-image-321"/></figure>
+<p><strong><u>Matt Palmer’s Eagle Jazz Band</u></strong>:  What a cracking line-up and concert.  The band consisted of leader Matt Palmer (reeds &amp; vocals), Pete Brown (trumpet), Terry Williams (trombone), Mark Challinor (banjo, ukulele and vocals), Brian Lawrence (double bass &amp; sousaphone) and Tim Jones (drums).  They opened with ‘Red Wing’ and closed with their regular ‘Bring Me Sunshine’.  In between we had assorted music, some of which were ‘Good Night Sweet Prince’, ‘Passport to Paradise’, ‘That’s a’plenty’, ‘Birth of the Blues’, ‘Precious Lord Take My Hand’ and ‘You Made me Love You’.  There was delight on every face in the packed room and you could really not have wished for a better concert.</p>
+<figure class="wp-block-image size-full"><img src="/wp-content/uploads/2021/12/image.jpeg" alt="" class="wp-image-320"/></figure>
+<p><strong><u>Sarah Spencer’s Transatlantic Band:</u></strong>  With some changes in the line-up the Band consisted of Sarah Spencer – leader and reeds/vocals, Mike Owen – trombone/vocals, “Magic” Mike Henry – trumpet, “Lord” Jim Swinnerton – string bass, Hugh Crozier – piano and finally Graham Smith on drums (in place of Rod Brown).  The music was lively, and occasionally wistful, and brought back many memories such as the Inkspot number ‘Someone’s Rocking my Dream Boat’.  Amongst the other numbers were ‘New Orleans Hopscotch Blues’, ‘Yes It’s Me and I’m in Love with Him’, ‘If I didn’t Care for You’ ‘My Dear Mr Shane’ and the wonderfully named ‘Papa’s Got the Jim-Jams’.  The whole concert went down well and we look forward to welcoming them back in 2022.</p>
+</div>

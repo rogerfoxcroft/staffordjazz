@@ -1,0 +1,35 @@
+---
+// One post, as Twenty Sixteen's content.php (in lists) / content-single.php renders it.
+import { render } from 'astro:content';
+import { type Post, postUrl, formatDate, excerptOf } from '../lib/posts';
+
+interface Props {
+  post: Post;
+  single?: boolean;
+}
+
+const { post, single = false } = Astro.props;
+const { Content } = await render(post);
+const url = postUrl(post);
+const { title, date, featuredImage, wpId } = post.data;
+const Thumb = single ? 'div' : 'a';
+---
+<article id={wpId ? `post-${wpId}` : undefined} class="post type-post status-publish format-standard hentry" data-pagefind-body={single ? '' : undefined} data-pagefind-meta={single ? `excerpt:${excerptOf(post)}` : undefined}>
+	<header class="entry-header">
+		{title && single && <h1 class="entry-title" data-pagefind-meta="title">{title}</h1>}
+		{title && !single && <h2 class="entry-title"><a href={url} rel="bookmark">{title}</a></h2>}
+	</header><!-- .entry-header -->
+
+	{featuredImage && (
+		<Thumb class="post-thumbnail" href={single ? undefined : url} aria-hidden={single ? undefined : 'true'}>
+			<img src={featuredImage.src} width={featuredImage.width} height={featuredImage.height} alt={single ? featuredImage.alt : title} class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" />
+		</Thumb>
+	)}
+
+	<div class="entry-content">
+		<Content />
+	</div><!-- .entry-content -->
+
+	<!-- No entry-footer: the site has a single author, so the byline/date column is not shown. -->
+	{single && <time class="entry-date published updated screen-reader-text" datetime={date.toISOString()} data-pagefind-meta="date" data-pagefind-sort={`date:${date.toISOString()}`}>{formatDate(date)}</time>}
+</article>

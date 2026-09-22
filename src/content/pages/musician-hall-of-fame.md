@@ -1,0 +1,13 @@
+---
+title: "Musician Hall of Fame"
+date: "2019-02-27T08:51:40"
+wpId: 174
+---
+
+<div class="wp-content">
+<h2>The John Moore Memorial Trophy</h2>
+<p>In 1999 The Stafford Jazz Society created an annual award for its elected “Musician of the Year”. &nbsp;The Award honours the memory and the service to our Society of John Moore who for 13 years, from 1982 to 1995, was our Chairman.</p>
+<p>Winners of this Award are:</p>
+<p>1999-2000&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Dunstan Coulber (Clarinet)<br>2000-2001&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Paul Hares (Guitar)<br>2001-2002&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;John Hallam (Reeds)<br>2002-2003&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Archie Cotterell (Keyboard)<br>2003-2004&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Eric “Busker” Newton (Clarinet)<br>2004-2005&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Richard Leach (Trombone)<br>2005-2006&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Pete Ainge (Trumpet)<br>2006-2007&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Ralph Allin (Violin)<br>2007-2008&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Paul Vernon Chester (Guitar)<br>2008-2009&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Matt Palmer (Reeds)<br>2009-2010&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Ben Holder (Violin)<br>2010-2011&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Chris Pearce (Reeds)<br>2011-2012&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Robin Mason (Reeds)<br>2012-2013&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Terry Brunt (Trombone)<br>2013-2014&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Cavan Craddock (Reeds/Vocals)<br>2014-2015&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Peter “Pedro” Robinson (Banjo/Guitar/Bass)<br>2015-2016&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Thomas “Spats” Langham (Banjo)<br>2016-2017&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Nick Ward (Drums)<br>2017-2018&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Jim Swinnerton (Bass)</p>
+<p>The Trophy is an oak plaque created by a final year student at Staffordshire University’s School of Art &amp; Design. The timber was taken from an 18th Century banqueting table bought from a demolished country house in North Staffordshire. It incorporates The Stafford Jazz Society’s logo created by Frank Nichols and the opening notes of Georgia on my Mind the signature tune of the legendary jazz musician Nat Gonella who became a Life Member of The Stafford Jazz Society.</p>
+</div>
