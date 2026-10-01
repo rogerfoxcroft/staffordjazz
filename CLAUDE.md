@@ -60,6 +60,26 @@ scripts/
 - URLs: `trailingSlash: 'always'`, directory output. Image URLs under `/wp-content/uploads/`
   are the same as on the old site (except `.webp` conversions).
 
+## Monthly "Month Year Concerts" post (recurring)
+
+The client sends two Word 97 `.doc` files after each month, e.g. `Words Sep 26.doc` (one paragraph
+per concert, newest first, each starting "D Month YYYY – Band:") and `Pictures - September 26.doc`
+(one photo per concert with a "Band – date" caption).
+
+1. Text: `textutil -convert txt -output words.txt "Words ….doc"`. A lone `(` inside brackets, e.g.
+   `(()`, is a Wingdings symbol (a smiley) that textutil drops — write `(☺)`. Keep the client's
+   wording; fix only obvious keying slips (e.g. a stray digit in a word).
+2. Photos: `python3 scripts/doc-images.py "Pictures ….doc" OUT_DIR` (needs `olefile` — make a venv in
+   the scratchpad). Output order does **not** follow the captions: match each photo to its band by
+   looking at it (line-up size and instruments, band name on the drum head). The script strips EXIF
+   because Word leaves a stale Orientation tag that turns photos upside down in browsers.
+3. Save as `public/wp-content/uploads/YYYY/MM/<band-slug>.jpeg` (YYYY/MM = posting month).
+4. Post `src/content/posts/YYYY-MM-DD-<month>-<year>-concerts.md`, title "September 2026 Concerts",
+   date = posting day; no `excerpt` (computed) or `featuredImage`. Body is the usual `wp-content`
+   div: for each concert, newest first, a `<figure class="wp-block-image size-full"><img …></figure>`
+   then `<p><strong>D Month YYYY – Band:</strong> text</p>`. Copy `2026-10-01-september-2026-concerts.md`.
+5. `npm run build`, check the post, commit, push.
+
 ## Migration (one-off; normally not needed)
 
 `npm run export` requires Docker, the SQL dump in the repo root and the old site's files in
