@@ -36,6 +36,16 @@ const current = (href: string) => Astro.url.pathname === href;
 	<title>{fullTitle}</title>
 	{description && <meta name="description" content={description} />}
 	<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+	<meta property="og:site_name" content={site.title} />
+	{isFront && (
+		<script type="application/ld+json" set:html={JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: site.title,
+			alternateName: ['SJS', 'staffordjazz.org'],
+			url: new URL('/', Astro.site).href,
+		})} />
+	)}
 	<link rel="icon" href="/theme/icon-32.png" sizes="32x32" />
 	<link rel="icon" href="/theme/icon-192.png" sizes="192x192" />
 	<link rel="apple-touch-icon" href="/theme/icon-180.png" />

@@ -17,7 +17,7 @@ wpId: 189
 <li><strong>Band Entrance:</strong> Also at the <strong>RIGHT END</strong> of the building. Access to stage is via 5 concrete steps (see picture). Cars can be parked adjacent to this door for ease of unloading.                                                                </li>
 <li><strong>Stage Entrance:</strong> Rear door leads directly onto the performing space – a well-lit elevated stage (see picture) with a black curtain to hide stored furniture. <strong><em>Please use the pull cords each side and set up in front of this black curtain-line.</em></strong></li>
 <li><strong>Refreshments:</strong> A well-stocked &amp; competitively priced bar &amp; our own award-winning caterers serve hot drinks &amp; home-baked light refreshments.</li>
-<li><strong>Piano:</strong> On stage, last tuned May 2017 and fitted with casters. Pianists please select position on stage to maximise audience viewing.  A piano mirror is available</li>
+<li><strong>Piano:</strong> On stage, last tuned September 2026 and fitted with casters. Pianists please select position on stage to maximise audience viewing.  A piano mirror is available</li>
 <li><strong>Amplification:</strong> Not provided – bands need to provide their own.</li>
 <li><strong>E-cigarettes/vaporizing</strong> – not permitted (White Eagle Club policy).</li>
 </ul>
@@ -31,9 +31,9 @@ wpId: 189
 <ul class="wp-block-list">
 <li><strong>Publicity</strong><strong>:</strong> Band promotional material for local media outlets is always welcome in advance. We regret photographs cannot be returned. Band <em>website</em> details and permission to download from them are useful – please advise as appropriate. </li>
 <li><strong>Band CDs / Advertising</strong><strong>:</strong> An attended point of sale and distribution is available.</li>
-<li><strong>Band Fees</strong><strong>:</strong> Band payments for Regular Concerts are on a fixed sliding scale related to band numbers. Extended Concerts are to a set fee. Payment is at the end of the Concert, and, unless otherwise requested, is cash in hand.</li>
+<li><strong>Band Fees</strong><strong>:</strong> All bands are paid £800 for their concert regardless of the number of musicians in the band. Payment is at the end of the concert, and unless otherwise requested, will be cash in hand.</li>
 </ul>
 <h2 class="wp-block-heading"><strong>SJS Contacts</strong></h2>
-<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><a href="mailto:nickbalmforth@gmail.com">Nick Balmforth MBE (Chairman)</a></td><td>07974 131797</td></tr><tr><td>Ian D’Arcy (Publicity Officer)</td><td>07778 193394</td></tr></tbody></table></figure>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><a href="mailto:nickbalmforth@gmail.com">Nick Balmforth MBE (Chairman)</a></td><td>07974 131797</td></tr></tbody></table></figure>
 <p></p>
 </div>

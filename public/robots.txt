@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://staffordjazz.org/sitemap-index.xml
